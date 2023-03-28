@@ -552,9 +552,9 @@ input{
         content: "";
         background-color: var(--clr-light);
         border-radius: 4px;
-        width: 130%;
+        width: 120%;
         height: 270px;
-        left: -15%;
+        left: -10%;
         bottom: 225px;
         position:relative;
         display: inline-block;
