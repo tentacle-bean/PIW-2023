@@ -542,6 +542,7 @@ input{
                                 "adr phone"
                                 "acc acc";
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 3em;
         justify-self: center;
         max-width: max-content;
     }
