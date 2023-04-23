@@ -1,0 +1,195 @@
+:root{
+    --grad1: #ffe267;
+    --grad2: #ffb55f;
+    --grad3: #ff8a6d;
+    --grad4: #e7687f;
+    --grad5: #bb548d;
+    --grad6: #7c4992;
+    --grad7: #3a438b;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(210deg, var(--grad1), var(--grad2), var(--grad3), var(--grad4), var(--grad5), var(--grad6), var(--grad7));
+    min-height: 90vh;
+    margin: 0;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+}
+
+.body-container{
+    margin: 10vh auto 0;
+    max-width: 750px;
+    padding: 0 2em 2em;
+}
+
+.body-container,
+.todo-form,
+.todo-container{
+    display: flex;
+}
+
+.body-container,
+.todo-form{
+    flex-direction: column;
+}
+
+.body-container,
+.todo-form,
+.todo-container{
+    align-items: center;
+}
+
+
+
+
+.todo-form{
+    width: 100%;
+}
+
+.form-label{
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 5px var(--grad4);
+    
+}
+
+.input,
+.btn{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.input,
+.btn,
+.todo-list,
+.todo-container{
+    border-radius: 10px;
+}
+
+.form-input,
+.todo-list{
+    background-color: rgba(255, 255, 255,0.5);
+}
+
+.form-input{
+    margin-top: 2em;
+    width: 100%;
+}
+
+.input{
+    border: 2px solid transparent;
+    padding: 1em 2em;
+    text-shadow: 0 0 5px var(--grad3);
+    color: var(--grad5);
+}
+
+.input:focus{
+    outline: none;
+    border-color: white;
+}
+
+.input:focus,
+.btn-add:hover,
+.btn-add:active{
+    box-shadow: 0 0 5px var(--grad3);
+}
+
+.btn{
+    padding: 1em 2em;
+    background: none;
+}
+
+.todo:hover,
+.todo:active,
+.btn:hover,
+.btn:active{
+    cursor: pointer;
+}
+
+.btn-add{
+    color: white;
+    text-shadow: 0 0 5px var(--grad5);
+    border: 2px solid white;
+    margin-top: 1em;
+    transition: transform 0.2s;
+}
+
+.btn-add:hover,
+.btn-add:active{
+    transform: scale(1.1);
+    background-image: linear-gradient(-150deg, var(--grad3), var(--grad4), var(--grad5));
+}
+
+
+
+.todo-list{
+    margin-top: 3em;
+    width: 100%;
+    padding: 1em;
+}
+
+.todo-input{
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    background-image: url("lupa.png");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    background-size: 2em;
+}
+
+.todo-input,
+.todo-container{
+    background-color: rgba(255, 255, 255,0.25);
+}
+
+.todo-container{
+    justify-content: flex-end;
+    padding: 0 0.5em;
+    word-wrap: break-word;
+    color: var(--grad4);
+    margin-top: 1em;
+}
+
+.todo{
+    max-width: 70%;
+    margin-right: auto;
+}
+
+.date{
+    margin-right: 1em;
+}
+
+.btn-remove{
+    color: inherit;
+    border: none;
+    padding: 0 1em;
+}
+
+.todo:hover,
+.todo:active,
+.btn-remove:hover,
+.btn-remove:active{
+    color: rgba(255, 255, 255,0.5);
+}
+
+.done-container{
+    background-color: rgba(231,104,127,0.25);
+    background-image: linear-gradient(210deg, rgba(255, 138, 109, 0.25), rgba(231,104,127,0.25), rgba(187, 84, 141,0.25));
+}
+
+.done-todo{
+    text-decoration: line-through;
+}
+
+.hidden,
+.trash{
+    display: none;
+}
+
