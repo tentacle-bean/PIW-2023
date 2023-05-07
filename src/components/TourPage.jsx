@@ -1,10 +1,12 @@
 import {useParams, useLocation} from 'react-router-dom'
-import {useRef, useEffect, useState} from 'react'
+import {useRef, useEffect, useState, useContext} from 'react'
+import DataContext from '../context/DataContext'
 
-export default function TourPage({toursData}){
+export default function TourPage(){
     const {id} = useParams()
 
-    const {name, city, img, desc} = {...(toursData.find(data => id===data.id))}
+    const {toursData} = useContext(DataContext)
+    const {name, city, img, desc, bedrooms, price} = {...(toursData.find(data => id===data.id))}
 
     const ref = useRef()
     const {pathname} = useLocation()
@@ -36,7 +38,7 @@ export default function TourPage({toursData}){
     </>
 
     const notificationContent = <>
-        <h3 className='title'>{Math.random() > 0.5 ? "Email succesfully sent! :)" : "Something went wrong :("}</h3>
+        <h3 className='title'>{Math.random() > 0.5 ? "Email successfully sent! :)" : "Something went wrong :("}</h3>
         <button className='tour-page-form-btn btn btn-yellow'>Ok</button>
     </>
 
@@ -50,8 +52,13 @@ export default function TourPage({toursData}){
                         <h3 className="title">{`${city}`}</h3>
                     </div>
                 </div>
-
+                <div className="tour-page-info">
+                    <p className="paragraph tour-page-bedrooms"><i className="fa-solid fa-bed"></i> {bedrooms} bedrooms</p>
+                    <p className="paragraph accent tour-page-price">{price}</p>
+                </div>
+                
                 <p className="paragraph tour-page-desc">{desc}</p>
+                
 
                 <h3 className="title">Want to contact the seller?</h3>
                 <p className="subtitle">Send them an email by using the form below!</p> 

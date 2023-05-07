@@ -1,22 +1,16 @@
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import React from 'react'
-import { useState } from 'react'
 
 import Home from './components/Home'
 import About from './components/About'
 import Tours from './components/Tours'
 import Footer from './components/Footer'
-import AddNew from './components/Add'
+import AddNew from './components/AddNew'
 
-import data from './assets/data.js'
 import TourPage from './components/TourPage'
 
 export default function App(){
-    const [toursData, setToursData] = useState(data)
-
-    const addTour = (newTour) => {
-        setToursData(toursData => [...toursData, newTour])
-    }
+    
 
     return(
         <>
@@ -44,9 +38,9 @@ export default function App(){
                 </nav>
 
                 <Routes>
-                    <Route path='/add-a-new' element={<><AddNew addTour={addTour}/></>}/>
-                    <Route path='/tour/:id' element={<><TourPage toursData={toursData}/></>}/>
-                    <Route path='/*' element={<><Home/><About/><Tours toursData={toursData}/></>} />
+                    <Route path='/add-a-new' element={<><AddNew/></>}/>
+                    <Route path='/tour/:id' element={<><TourPage/></>}/>
+                    <Route path='/*' element={<><Home/><About/><Tours/></>} />
                 </Routes>
             </Router>
 

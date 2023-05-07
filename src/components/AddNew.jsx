@@ -1,6 +1,10 @@
-import { useState, useRef, useEffect } from 'react'
+import { useContext, useState, useRef, useEffect } from 'react'
 import {Link} from 'react-router-dom'
-export default function AddNew({addTour}){
+import DataContext from '../context/DataContext'
+
+export default function AddNew(){
+    const {addTour} = useContext(DataContext)
+
     const ref = useRef(null)
 
     useEffect(() => {

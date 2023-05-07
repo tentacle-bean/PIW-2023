@@ -1,8 +1,11 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import Tour from './Tour.jsx'
+import DataContext from '../context/DataContext.jsx'
 
-export default function Tours({toursData}){
+export default function Tours(){
+    const {toursData} = useContext(DataContext)
+
     const allTours = toursData.map((data) => 
         <Tour
             key={data.id}
