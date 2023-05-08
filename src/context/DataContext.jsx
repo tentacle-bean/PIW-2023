@@ -3,6 +3,7 @@ import data from '../assets/data.js'
 
 const DataContext = createContext()
 
+// eslint-disable-next-line react/prop-types
 function Provider({children}){
     const [toursData, setToursData] = useState(data)
 

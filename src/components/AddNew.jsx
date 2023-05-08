@@ -24,7 +24,7 @@ export default function AddNew(){
     } 
 
     const handleSubmit = () => {
-        addTour({...propertyData, img: `https://picsum.photos/seed/${Math.round(Math.random()*10000)}/1920/1080`, id: toString(Math.round(Math.random()*100000))})
+        addTour({...propertyData, img: `https://picsum.photos/seed/${Math.round(Math.random()*10000)}/1920/1080`, id: (Math.round(Math.random()*100000)).toString()})
     }
 
     return(

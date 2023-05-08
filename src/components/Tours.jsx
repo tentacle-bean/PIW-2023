@@ -1,10 +1,17 @@
-import React from 'react'
-import { useContext, useState, useEffect } from 'react'
+import { useContext, useState } from 'react'
 import Tour from './Tour.jsx'
 import DataContext from '../context/DataContext.jsx'
 
 export default function Tours(){
     const {toursData} = useContext(DataContext)
+
+    const [formData, setFormData] = useState({city: "", bedrooms: "", desc: "", order: "descending"})
+
+    const handleChange = event => {
+        const category = event.target.getAttribute("data-form-type")
+        const value = event.target.value
+        setFormData(formData => ({...formData, [category]: value}))
+    } 
 
     const allTours = toursData.map((data) => 
         <Tour
@@ -19,41 +26,24 @@ export default function Tours(){
         />
     )
 
-    const [shownTours, setShownTours] = useState(allTours)
-    
-    const [formData, setFormData] = useState({city: "", bedrooms: "", desc: "", order: "descending"})
+    const shownTours = allTours.filter((tour) => {
+        const cityCondition = tour.props["city"].toLowerCase().includes(formData.city.toLowerCase())
+        const bedroomsCondition = tour.props["bedrooms"].includes(formData.bedrooms.toLowerCase())
+        const descCondition = tour.props["desc"].toLowerCase().includes(formData.desc.toLowerCase())
+        return (cityCondition && bedroomsCondition && descCondition)
+    })
 
-    const handleChange = event => {
-        const category = event.target.getAttribute("data-form-type")
-        const value = event.target.value
-        setFormData(formData => ({...formData, [category]: value}))
-    } 
+    shownTours.sort((a, b) =>{
+        const firstPrice = Number(a.props.price.slice(1))
+        const secondPrice = Number(b.props.price.slice(1))
 
-    useEffect(() => {
-        sortAndFilter()
-    }, [formData])
-
-    const sortAndFilter = () => {
-        allTours.sort((a, b) =>{
-            const firstPrice = Number(a.props.price.slice(1))
-            const secondPrice = Number(b.props.price.slice(1))
-
-            if(formData.order === "ascending"){
-                return (firstPrice > secondPrice) ? 1 : -1
-            }
-            else{
-                return (firstPrice < secondPrice) ? 1 : -1
-            }
-        })
-        
-        setShownTours(allTours.filter((tour, index) => {
-                const cityCondition = tour.props["city"].toLowerCase().includes(formData.city.toLowerCase())
-                const bedroomsCondition = tour.props["bedrooms"].includes(formData.bedrooms.toLowerCase())
-                const descCondition = tour.props["desc"].toLowerCase().includes(formData.desc.toLowerCase())
-                return (cityCondition && bedroomsCondition && descCondition)
-            })
-        )
-    }
+        if(formData.order === "ascending"){
+            return (firstPrice > secondPrice) ? 1 : -1
+        }
+        else{
+            return (firstPrice < secondPrice) ? 1 : -1
+        }
+    })
 
     return(
         <>

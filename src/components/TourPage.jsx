@@ -38,7 +38,7 @@ export default function TourPage(){
     </>
 
     const notificationContent = <>
-        <h3 className='title'>{Math.random() > 0.5 ? "Email successfully sent! :)" : "Something went wrong :("}</h3>
+        <h3 className='title'>{Math.random() > 0.5 ? "Email sent successfully! :)" : "Something went wrong :("}</h3>
         <button className='tour-page-form-btn btn btn-yellow'>Ok</button>
     </>
 
