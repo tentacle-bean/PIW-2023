@@ -8,7 +8,7 @@ function Provider({children}){
     const [toursData, setToursData] = useState(data)
 
     const addTour = (newTour) => {
-        setToursData(toursData => [...toursData, newTour])
+        setToursData(current => [...current, newTour])
     }
 
     const context={

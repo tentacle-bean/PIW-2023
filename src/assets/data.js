@@ -6,7 +6,7 @@ import house4 from './house 4.jpg'
 const data = [
     {
         id: "0",
-        name: "South Bridge Avenue 64",
+        name: "ul. Tarnogórska 41",
         city: "Wrocław",
         desc: "With ample natural light and breathtaking views of the surrounding landscape, this is an opportunity to own a truly exceptional property in a prime location.",
         img: house1,
@@ -15,8 +15,8 @@ const data = [
     },
     {
         id: "1",
-        name: "Palm Springs 256",
-        city: "Wrocław",
+        name: "ul. Jeziorna 146",
+        city: "Olsztyn",
         desc: "With high-end finishes, and state-of-the-art technology, this stunning home offers the perfect blend of luxury and functionality",
         img: house2,
         bedrooms: "3",
@@ -24,8 +24,8 @@ const data = [
     },
     {
         id: "2",
-        name: "Rock Valley 512",
-        city: "Wrocław",
+        name: "ul. Nakielska 58",
+        city: "Bydgoszcz",
         desc: "Enjoy spacious, light-filled rooms that flow seamlessly together, creating an environment that is both inviting and awe-inspiring.",
         img: house3,
         bedrooms: "4",
@@ -33,8 +33,8 @@ const data = [
     },
     {
         id: "3",
-        name: "Grapevine Street 128",
-        city: "Wrocław",
+        name: "ul. Zuchów 114",
+        city: "Dąbrowa Górnicza",
         desc: "This breathtaking modern house for sale boasts an open-concept layout, sleek finishes, and expansive windows that offer stunning views of the surrounding landscape",
         img: house4,
         bedrooms: "3",

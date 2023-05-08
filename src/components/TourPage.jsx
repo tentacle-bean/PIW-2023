@@ -21,12 +21,12 @@ export default function TourPage(){
         const value = event.target.value
         const category  = event.target.getAttribute("data-type")
 
-        setEmailData(emailData => ({...emailData, [category]: value}))
+        setEmailData(current => ({...current, [category]: value}))
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        setIsEmailSent(isEmailSent => !isEmailSent)
+        setIsEmailSent(current => !current)
         setEmailData({address: "", content: ""})
     }
 

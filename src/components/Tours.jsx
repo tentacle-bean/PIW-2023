@@ -10,7 +10,7 @@ export default function Tours(){
     const handleChange = event => {
         const category = event.target.getAttribute("data-form-type")
         const value = event.target.value
-        setFormData(formData => ({...formData, [category]: value}))
+        setFormData(current => ({...current, [category]: value}))
     } 
 
     const allTours = toursData.map((data) => 

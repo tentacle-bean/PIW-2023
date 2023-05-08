@@ -20,7 +20,7 @@ export default function AddNew(){
             value = '$' + value
         }
 
-        setPropertyData(propertyData => ({...propertyData, [category]: value}))
+        setPropertyData(current => ({...current, [category]: value}))
     } 
 
     const handleSubmit = () => {
