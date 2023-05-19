@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "0",
+      "name": "ul. Tarnogórska 41",
+      "city": "Wrocław",
+      "desc": "With ample natural light and breathtaking views of the surrounding landscape, this is an opportunity to own a truly exceptional property in a prime location.",
+      "img": "https://archinea.pl/wp-content/uploads/2021/11/FOREST-HOUSE_JMW-ARCHITEKCI_50.jpg",
+      "bedrooms": "4",
+      "price": "$530000"
+    },
+    {
+      "id": "1",
+      "name": "ul. Jeziorna 146",
+      "city": "Olsztyn",
+      "desc": "With high-end finishes, and state-of-the-art technology, this stunning home offers the perfect blend of luxury and functionality",
+      "img": "https://images.adsttc.com/media/images/63c0/a935/7643/4a39/8498/948f/large_jpg/casa-tunich-apiron_13.jpg?1673570670",
+      "bedrooms": "3",
+      "price": "$490000"
+    },
+    {
+      "id": "2",
+      "name": "ul. Nakielska 58",
+      "city": "Bydgoszcz",
+      "desc": "Enjoy spacious, light-filled rooms that flow seamlessly together, creating an environment that is both inviting and awe-inspiring.",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/af/Big_single-family_home_2.jpg",
+      "bedrooms": "4",
+      "price": "$570000"
+    },
+    {
+      "id": "3",
+      "name": "ul. Zuchów 114",
+      "city": "Dąbrowa Górnicza",
+      "desc": "This breathtaking modern house for sale boasts an open-concept layout, sleek finishes, and expansive windows that offer stunning views of the surrounding landscape",
+      "img": "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+      "bedrooms": "3",
+      "price": "$475000"
+    }
+  ]
+}
