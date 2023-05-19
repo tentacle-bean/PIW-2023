@@ -243,6 +243,10 @@ input{
   margin: 0 auto;
 }
 
+.user-area{
+  margin-top: 3em;
+}
+
 .login-area{
   margin-top: 1em;
 }

@@ -36,5 +36,15 @@
       "bedrooms": "3",
       "price": "$475000"
     }
+  ],
+
+  "users": [
+    {
+        "id": "0",
+        "name": "Wiktoria",
+        "surname": "Rekić",
+        "email": "wiktoriarekic@gmail.com",
+        "password": "123"
+    }
   ]
 }
