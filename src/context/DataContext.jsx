@@ -1,12 +1,14 @@
 import {useState, createContext, useEffect} from 'react'
 import axios from 'axios'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 const DataContext = createContext()
 
 // eslint-disable-next-line react/prop-types
 function Provider({children}){
+    const [getSavedUser, setSavedUser, removeSavedUser] = useLocalStorage()
     const [toursData, setToursData] = useState([])
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(getSavedUser())
 
     const fetchData = async () => {
         const response = await axios.get("http://localhost:3001/data")
@@ -30,17 +32,17 @@ function Provider({children}){
 
         if(result){
             setUser(result)
-            console.log(":D")
+            setSavedUser(result)
             return true
         }
         else{
-            console.log(">:C")
             return false
         }
     }
 
     const logout =  () => {
         setUser(null)
+        removeSavedUser()
     }
 
     const context={
