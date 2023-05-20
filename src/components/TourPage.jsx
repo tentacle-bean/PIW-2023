@@ -16,12 +16,14 @@ export default function TourPage(){
 
     const [emailData, setEmailData] = useState({address: user ? user.email : "", content: ""})
     const [isEmailSent, setIsEmailSent] = useState(false)
+    const formRef = useRef()
 
     const handleChange = (event) => {
         const value = event.target.value
         const category  = event.target.getAttribute("data-type")
 
         setEmailData(current => ({...current, [category]: value}))
+        
     }
 
     const handleSubmit = (event) => {
@@ -33,7 +35,7 @@ export default function TourPage(){
     const formContent = <>
         <input data-type="address" onChange={handleChange} value={emailData.address} placeholder="your email address" className="login-input tour-page-form-input" type="email" required></input>
 
-        <textarea data-type="content" onChange={handleChange} value={emailData.content} className="login-input tour-page-form-ta" required></textarea>
+        <textarea data-type="content" ref={formRef} onChange={handleChange} className="login-input tour-page-form-ta" required></textarea>
         <button className='tour-page-form-btn btn btn-yellow'>Send</button>
     </>
 
