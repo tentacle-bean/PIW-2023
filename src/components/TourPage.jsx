@@ -5,7 +5,7 @@ import DataContext from '../context/DataContext'
 export default function TourPage(){
     const {id} = useParams()
 
-    const {toursData} = useContext(DataContext)
+    const {toursData, user} = useContext(DataContext)
     const {name, city, img, desc, bedrooms, price} = {...(toursData.find(data => id===data.id))}
 
     const ref = useRef()
@@ -14,7 +14,7 @@ export default function TourPage(){
         ref.current.scrollIntoView()
     },[pathname])
 
-    const [emailData, setEmailData] = useState({address: "", content: ""})
+    const [emailData, setEmailData] = useState({address: user ? user.email : "", content: ""})
     const [isEmailSent, setIsEmailSent] = useState(false)
 
     const handleChange = (event) => {

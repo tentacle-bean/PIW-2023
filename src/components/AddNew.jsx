@@ -1,8 +1,9 @@
 import { useContext, useState, useRef, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 import DataContext from '../context/DataContext'
 
 export default function AddNew(){
-    const {addTour} = useContext(DataContext)
+    const {addTour, user} = useContext(DataContext)
 
     const ref = useRef(null)
 
@@ -25,12 +26,18 @@ export default function AddNew(){
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        addTour({...propertyData, img: `https://picsum.photos/seed/${Math.round(Math.random()*10000)}/1920/1080`})
+        addTour({...propertyData, email: user.email, img: `https://picsum.photos/seed/${Math.round(Math.random()*10000)}/1920/1080`})
         
         setIsSubmitted(true)
+        ref.current.scrollIntoView()
     }
 
-    const formArea = !isSubmitted ? <>
+    const formArea = !user ?
+        <Link to="/">
+            <button className="btn btn-yellow">Home page</button>
+        </Link> 
+    :
+        !isSubmitted ?
             <form onSubmit={handleSubmit} className="hero-form">
                 <div className="login-area">
                     <label className="paragraph login-label" htmlFor="name">Address</label>
@@ -46,14 +53,15 @@ export default function AddNew(){
                 </div>
                 <button className="btn btn-yellow btn-post" type="submit">Post your offer</button>
             </form>
-        </> : <h1 className='title'>Offer posted successfully!</h1>
+        :   
+            <h1 className='title'>Offer posted successfully!</h1>
 
     return(
         <>
             <section ref={ref} id="add-new" className="container section-add">
                 <div className="hero-header-area">
                     <h1 className="title">Want to post a new offer?</h1>
-                    <p className="paragraph">Fill in your property's data below!</p>
+                    <p className="paragraph">{user ? "Fill in your property's data below!" : "You should log in first!"}</p>
                 </div>
                 {formArea}
             </section>

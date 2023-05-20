@@ -7,7 +7,8 @@
       "desc": "With ample natural light and breathtaking views of the surrounding landscape, this is an opportunity to own a truly exceptional property in a prime location.",
       "img": "https://archinea.pl/wp-content/uploads/2021/11/FOREST-HOUSE_JMW-ARCHITEKCI_50.jpg",
       "bedrooms": "4",
-      "price": "$530000"
+      "price": "$530000",
+      "email": "vingamells0@google.ru"
     },
     {
       "id": "1",
@@ -16,7 +17,8 @@
       "desc": "With high-end finishes, and state-of-the-art technology, this stunning home offers the perfect blend of luxury and functionality",
       "img": "https://images.adsttc.com/media/images/63c0/a935/7643/4a39/8498/948f/large_jpg/casa-tunich-apiron_13.jpg?1673570670",
       "bedrooms": "3",
-      "price": "$490000"
+      "price": "$490000",
+      "email": "ghaggarty0@plala.or.jp"
     },
     {
       "id": "2",
@@ -25,26 +27,55 @@
       "desc": "Enjoy spacious, light-filled rooms that flow seamlessly together, creating an environment that is both inviting and awe-inspiring.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/a/af/Big_single-family_home_2.jpg",
       "bedrooms": "4",
-      "price": "$570000"
+      "price": "$570000",
+      "email": "dmityushin1@odnoklassniki.ru"
     },
     {
       "id": "3",
       "name": "ul. Zuchów 114",
       "city": "Dąbrowa Górnicza",
       "desc": "This breathtaking modern house for sale boasts an open-concept layout, sleek finishes, and expansive windows that offer stunning views of the surrounding landscape",
-      "img": "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+      "img": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg",
       "bedrooms": "3",
-      "price": "$475000"
+      "price": "$475000",
+      "email": "lstanbro1@is.gd"
     }
   ],
-
   "users": [
     {
-        "id": "0",
-        "name": "Wiktoria",
-        "surname": "Rekić",
-        "email": "wiktoriarekic@gmail.com",
-        "password": "123"
+      "id": "123",
+      "name": "Wiktoria",
+      "surname": "Rekić",
+      "email": "wiktoriarekic@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": 0,
+      "name": "Vanda",
+      "surname": "Ingamells",
+      "email": "vingamells0@google.ru",
+      "password": "jITcOryOY"
+    },
+    {
+      "id": 1,
+      "name": "Garold",
+      "surname": "Haggarty",
+      "email": "ghaggarty0@plala.or.jp",
+      "password": "rOJiCK"
+    },
+    {
+      "id": 2,
+      "name": "Daffie",
+      "surname": "Mityushin",
+      "email": "dmityushin1@odnoklassniki.ru",
+      "password": "Q0wl5t"
+    },
+    {
+      "id": 3,
+      "name": "Lib",
+      "surname": "Stanbro",
+      "email": "lstanbro1@is.gd",
+      "password": "RD2HSIU"
     }
   ]
 }

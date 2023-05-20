@@ -5,7 +5,7 @@ import heroImage from '../assets/hero image.png'
 export default function Home(){
     const [formData, setFormData] = useState({email: "", password: ""})
     const {user, login, logout} = useContext(DataContext)
-    const [showUser, setShowUser] = useState(false)
+    const [showUser, setShowUser] = useState(user)
 
     const handleChange = event => {
         const category = event.target.getAttribute("data-type")
@@ -36,7 +36,7 @@ export default function Home(){
         :
             <div className='user-area'>
                 <h3 className='paragraph'>User not found</h3>
-                <button className='btn btn-yellow' onClick={handleClick}>Try again</button>
+                <button className='btn btn-yellow' onClick={() => setShowUser(false)}>Try again</button>
             </div>
     :
         <form onSubmit={handleSubmit} className="hero-form">
