@@ -22,6 +22,7 @@ export default function TourPage(){
         if(!isEmailSent){
             addressRef.current.value = user ? user.email : ""
             contentRef.current.value = ""
+            contentRef.current.focus()
         }
     }, [user, isEmailSent])
 
