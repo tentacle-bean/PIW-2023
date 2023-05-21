@@ -14,28 +14,38 @@ export default function TourPage(){
         ref.current.scrollIntoView()
     },[pathname])
 
-    const [emailData, setEmailData] = useState({address: user ? user.email : "", content: ""})
     const [isEmailSent, setIsEmailSent] = useState(false)
-    const formRef = useRef()
+    const addressRef = useRef(null)
+    const contentRef = useRef(null)
+
+    useEffect(() => {
+        if(!isEmailSent){
+            addressRef.current.value = user ? user.email : ""
+            contentRef.current.value = ""
+        }
+    }, [user, isEmailSent])
 
     const handleChange = (event) => {
         const value = event.target.value
         const category  = event.target.getAttribute("data-type")
-
-        setEmailData(current => ({...current, [category]: value}))
         
+        if(category === "address"){
+            addressRef.current.value = value
+        }
+        else{
+            contentRef.current.value = value
+        }
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
         setIsEmailSent(current => !current)
-        setEmailData({address: "", content: ""})
     }
 
     const formContent = <>
-        <input data-type="address" onChange={handleChange} value={emailData.address} placeholder="your email address" className="login-input tour-page-form-input" type="email" required></input>
+        <input data-type="address" onChange={handleChange} ref={addressRef} placeholder="your email address" className="login-input tour-page-form-input" type="email" required></input>
 
-        <textarea data-type="content" ref={formRef} onChange={handleChange} className="login-input tour-page-form-ta" required></textarea>
+        <textarea data-type="content" ref={contentRef} onChange={handleChange} className="login-input tour-page-form-ta" required></textarea>
         <button className='tour-page-form-btn btn btn-yellow'>Send</button>
     </>
 
