@@ -5,6 +5,7 @@ import About from './components/About'
 import Tours from './components/Tours'
 import Footer from './components/Footer'
 import AddNew from './components/AddNew'
+import Cart from "./components/Cart"
 
 import TourPage from './components/TourPage'
 
@@ -21,14 +22,8 @@ export default function App(){
                         <Link to='/'>
                             <button className="navbar-link paragraph btn">Home</button>
                         </Link>
-                        <Link to='/'>
-                            <button className="navbar-link paragraph btn">About</button>
-                        </Link>
-                        <Link to='/'>
-                            <button className="navbar-link paragraph btn">House tours</button>
-                        </Link>
-                        <Link to='/'>
-                            <button className="navbar-link paragraph btn">Contact</button>
+                        <Link to='/cart'>
+                            <button className="navbar-link paragraph btn">Cart</button>
                         </Link>
                         <Link to='/add-a-new'>
                             <button className="navbar-link paragraph btn btn-yellow">Add new</button>
@@ -37,15 +32,13 @@ export default function App(){
                 </nav>
 
                 <Routes>
+                    <Route path='/cart' element={<><Cart/></>}/>
                     <Route path='/add-a-new' element={<><AddNew/></>}/>
                     <Route path='/tour/:id' element={<><TourPage/></>}/>
                     <Route path='/*' element={<><Home/><About/><Tours/></>} />
                 </Routes>
             </Router>
 
-            
-
-            
             <Footer/>
         </>
     )

@@ -338,11 +338,11 @@ input{
   text-align: left;
   grid-template-columns: 2fr 3fr;
   grid-template-rows: 7fr 1fr 1fr 3fr 1fr;
-  grid-template-areas:    "photo photo"
-                          "bedrooms bedrooms"
-                          "name name"
-                          "desc desc"
-                          "price btn";
+  grid-template-areas:    "photo photo photo"
+                          "bedrooms bedrooms bedrooms"
+                          "name name name"
+                          "desc desc desc"
+                          "price cart-btn book-btn";
   background-color: white;
   border-radius: 4px;
   padding: 1.5em;
@@ -379,8 +379,14 @@ input{
   grid-area: price;
 }
 
+.cart-btn{
+  grid-area: cart-btn;
+  justify-self: end;
+  margin-right: 1em;
+}
+
 .tour-btn{
-  grid-area: btn;
+  grid-area: book-btn;
   justify-self: end;
 }
 
