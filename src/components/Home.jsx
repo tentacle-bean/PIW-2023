@@ -1,57 +1,32 @@
-import { useContext, useState } from 'react'
-import DataContext from '../context/DataContext'
+import { logInWithGoogle, useAuth, firebaseLogout } from '../firebase/UserService'
 import heroImage from '../assets/hero image.png'
 
 export default function Home(){
-    const [formData, setFormData] = useState({email: "", password: ""})
-    const {user, login, logout} = useContext(DataContext)
-    const [showUser, setShowUser] = useState(user)
+    const user = useAuth()
+    console.log(user)
 
-    const handleChange = event => {
-        const category = event.target.getAttribute("data-type")
-        let value = event.target.value
-
-        setFormData(current => ({...current, [category]: value}))
-    } 
-
-    const handleSubmit = (event) => {
+    const handleGoogle = async (event) => {
         event.preventDefault()
-        setFormData({email: "", password: ""})
-        login(formData)
-        setShowUser(true)
+        await logInWithGoogle()
     }
 
     const handleClick = () => {
-        logout()
-        setShowUser(false)
+        firebaseLogout()
     }
 
-    const formArea = showUser ?
-        user ?
-            <div className='user-area'>
-                <h3 className='paragraph'>You are logged in as</h3>
-                <h3 className='title'>{user.name} {user.surname}</h3>
-                <button className='btn btn-yellow' onClick={handleClick}>Log out</button>
-            </div>
-        :
-            <div className='user-area'>
-                <h3 className='paragraph'>User not found</h3>
-                <button className='btn btn-yellow' onClick={() => setShowUser(false)}>Try again</button>
-            </div>
+    const formArea = user ?
+        <div className='user-area'>
+            <h3 className='paragraph'>You are logged in as</h3>
+            <h3 className='title'>{user.displayName}</h3>
+            <button className='btn btn-yellow' onClick={handleClick}>Log out</button>
+        </div>
     :
-        <form onSubmit={handleSubmit} className="hero-form">
-            <div className="login-area">
-                <label className="paragraph login-label" htmlFor="login">Email</label>
-                <input data-type="email" className="login-input" id="login" type="email" required onChange={handleChange} value={formData.email}></input>
-                <label className="paragraph login-label" htmlFor="password">Password</label>
-                <input data-type="password" className="login-input" id="password" type="password" required onChange={handleChange} value={formData.password}></input>
-            </div>
-            <div className="login-links">
-                <p className="paragraph">No account?<a className="login-link register-link" href="#">Register</a></p>
-                <a className="login-link paragraph" href="#">Forgot password</a>
-            </div>
-            <button className="btn btn-yellow" type="submit">Log in</button>
-        </form>
+        <>
+            <button className="btn btn-yellow" onClick={handleGoogle}>Log in with Google</button>
+        </>
+        
+        
+        
 
     return(
         <section id="home" className="container section-home">

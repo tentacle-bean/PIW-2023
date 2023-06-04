@@ -1,9 +1,11 @@
 import { useContext, useState, useRef, useEffect } from 'react'
+import { useAuth } from '../firebase/UserService'
 import {Link} from 'react-router-dom'
 import DataContext from '../context/DataContext'
 
 export default function AddNew(){
-    const {addTour, user} = useContext(DataContext)
+    const {addTour} = useContext(DataContext)
+    const user = useAuth()
 
     const ref = useRef(null)
 

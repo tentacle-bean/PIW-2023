@@ -32,4 +32,4 @@ export const  useAuth = () => {
     return user
 }
 
-export const logout = () => signOut(auth)
+export const firebaseLogout = () => signOut(auth)

@@ -39,6 +39,16 @@
       "bedrooms": "3",
       "price": "$475000",
       "email": "lstanbro1@is.gd"
+    },
+    {
+      "name": "Kwiatowa 16",
+      "city": "Jelenia Góra",
+      "bedrooms": "43",
+      "price": "$4",
+      "desc": "fh",
+      "email": "wiktoriarekic@gmail.com",
+      "img": "https://picsum.photos/seed/3097/1920/1080",
+      "id": "T07nRPN"
     }
   ],
   "users": [
