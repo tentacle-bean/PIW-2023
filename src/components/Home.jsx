@@ -1,4 +1,4 @@
-import { logInWithGoogle, useAuth, firebaseLogout } from '../firebase/UserService'
+import { logInWithGoogle, logInWithGithub, useAuth, firebaseLogout } from '../firebase/UserService'
 import heroImage from '../assets/hero image.png'
 
 export default function Home(){
@@ -8,6 +8,11 @@ export default function Home(){
     const handleGoogle = async (event) => {
         event.preventDefault()
         await logInWithGoogle()
+    }
+
+    const handleGithub = async (event) => {
+        event.preventDefault()
+        await logInWithGithub()
     }
 
     const handleClick = () => {
@@ -21,9 +26,10 @@ export default function Home(){
             <button className='btn btn-yellow' onClick={handleClick}>Log out</button>
         </div>
     :
-        <>
+        <div className='user-btns'>
             <button className="btn btn-yellow" onClick={handleGoogle}>Log in with Google</button>
-        </>
+            <button className="btn btn-yellow" onClick={handleGithub}>Log in with Github</button>
+        </div>
         
         
         

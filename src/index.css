@@ -247,6 +247,16 @@ input{
   margin-top: 3em;
 }
 
+.user-btns{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-btns > button{
+  margin-top: 1em;
+}
+
 .login-area{
   margin-top: 1em;
 }

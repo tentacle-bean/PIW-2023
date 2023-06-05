@@ -2,15 +2,27 @@ import { useEffect, useState } from 'react'
 import {auth} from './init'
 import {
     GoogleAuthProvider,
+    GithubAuthProvider,
     signInWithPopup,
     signOut,
 } from 'firebase/auth'
 
 const googleProvider = new GoogleAuthProvider()
+const githubProvider = new GithubAuthProvider()
 
 export const logInWithGoogle = async () => {
     try {
         await signInWithPopup(auth, googleProvider)
+    }
+    catch (err) {
+        console.error(err)
+        alert(err.message)
+    }
+}
+
+export const logInWithGithub = async () => {
+    try {
+        await signInWithPopup(auth, githubProvider)
     }
     catch (err) {
         console.error(err)

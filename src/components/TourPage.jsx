@@ -1,11 +1,13 @@
 import {useParams, useLocation} from 'react-router-dom'
 import {useRef, useEffect, useState, useContext} from 'react'
+import { useAuth } from '../firebase/UserService'
 import DataContext from '../context/DataContext'
 
 export default function TourPage(){
     const {id} = useParams()
+    const user = useAuth()
 
-    const {toursData, user} = useContext(DataContext)
+    const {toursData} = useContext(DataContext)
     const {name, city, img, desc, bedrooms, price} = {...(toursData.find(data => id===data.id))}
 
     const ref = useRef()
